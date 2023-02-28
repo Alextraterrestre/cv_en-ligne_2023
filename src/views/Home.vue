@@ -838,8 +838,8 @@ strong {
           max-height: 200px;
           margin: auto;
         }
-        img:last-child {
-        }
+        // img:last-child {
+        // }
       }
 
       figcaption {
