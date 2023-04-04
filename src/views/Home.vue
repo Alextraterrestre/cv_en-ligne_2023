@@ -1,7 +1,4 @@
 <template>
-  <NavBar />
-  <router-view />
-
   <!-- début SECTION 1 "ACCUEIL" -->
   <section class="landing">
     <div class="landing__header">
@@ -71,101 +68,127 @@
 
       <h3>... au clavier.</h3>
       <p>
-        En 2018, lors d'une période de chômage, j'ai entrepris une réorientation
-        professionnelle en effectuant une formation « Découverte Multimédia ». Cette
-        formation m'a motivé afin de continuer vers les métiers du web et du digital...
+        En 2018, lors d'une période de chômage, j'ai décier d'arrêter le métier la
+        restauration, ce qui m'a ammené à effectuer une formation « Découverte Multimédia
+        » en 2021. Cette formation m'a convaincu et motivé de continuer vers les métiers
+        du web et du digital...
       </p>
     </div>
+    <div class="about__link"></div>
   </section>
   <!-- fin SECTION 2  -->
 
   <!-- début SECTION 3 "COMPÉTENCES"   -->
+
   <section class="skills">
     <div class="skills__header">
       <h2>Mes compétences</h2>
     </div>
-    <!-- card 1 "graphisme" -->
-    <div class="skills__container">
-      <div class="skills__container__card">
-        <h3>Graphisme</h3>
-        <div class="bgImg">
-          <img
-            src="../assets/img/icon/icon_graphisme.svg"
-            alt="icone représentant une tablette graphique"
-          />
-        </div>
-        <p>Photographie</p>
-        <p>Vidéo</p>
-        <p>Illustration</p>
-        <p>Création de charte Graphique</p>
-        <p>Web Design</p>
-        <router-link :to="{ name: 'Skills' }" class="knowing_more"
-          >En savoir plus</router-link
-        >
-      </div>
-      <!-- card 1 "graphisme" -->
 
-      <!-- card 2 "SEO" -->
-      <div class="skills__container__card">
-        <h3>Référencement Naturel</h3>
-        <div class="bgImg">
-          <img
-            src="../assets/img/icon/icon_SEO.svg"
-            alt="Icône pour le référencement naturel"
-          />
+    <!-- web design  -->
+    <div class="skills__content">
+      <div class="skills__content__ability">
+        <!-- card 1 "graphisme" -->
+        <div class="skills__content__ability__container">
+          <div class="skills__content__ability__container__card">
+            <h3>Graphisme</h3>
+            <div class="bgImg">
+              <img
+                src="../assets/img/icon/icon_graphisme.svg"
+                alt="icone représentant une tablette graphique"
+              />
+            </div>
+            <p>Photographie</p>
+            <p>Vidéo</p>
+            <p>Illustration</p>
+            <p>Création de charte Graphique</p>
+            <p>Web Design</p>
+            <router-link :to="{ name: 'Skills' }" class="knowing_more"
+              >En savoir plus</router-link
+            >
+          </div>
         </div>
-        <p>Rédaction Web</p>
-        <p>Optimisation SEO</p>
-        <router-link :to="{ name: 'Skills' }" class="knowing_more"
-          >En savoir plus</router-link
-        >
-      </div>
-      <!-- card 2 "SEO" -->
 
-      <!-- card 3 "dev front" -->
-      <div class="skills__container__card">
-        <h3>Développement Frontend</h3>
-        <div class="bgImg">
-          <img
-            src="../assets/img/icon/icon_front.svg"
-            alt="Icône pour le développement web côté Front"
-          />
+        <!-- card 1 "graphisme" -->
+
+        <!-- card 2 "SEO" -->
+        <div class="skills__content__ability__container">
+          <div class="skills__content__ability__container__card">
+            <h3>Référencement Naturel</h3>
+            <div class="bgImg">
+              <img
+                src="../assets/img/icon/icon_SEO.svg"
+                alt="Icône pour le référencement naturel"
+              />
+            </div>
+            <p>Rédaction Web</p>
+            <p>Optimisation SEO</p>
+            <router-link :to="{ name: 'Skills' }" class="knowing_more"
+              >En savoir plus</router-link
+            >
+          </div>
         </div>
-        <p>HTML, CSS / SCSS</p>
-        <p>Javascript</p>
-        <p>Vue.js</p>
-        <p>React.js</p>
-        <p>Wordpress</p>
-        <router-link :to="{ name: 'Skills' }" class="knowing_more"
-          >En savoir plus</router-link
-        >
+        <!-- card 2 "SEO" -->
       </div>
-      <!-- card 3 "dev front" -->
+      <!-- web design  -->
 
+      <!-- Web Developpement -->
+      <div class="skills__content__ability">
+        <!-- card 3 "dev front" -->
+        <div class="skills__content__ability__container">
+          <div class="skills__content__ability__container__card">
+            <h3>Développement Frontend</h3>
+            <div class="bgImg">
+              <img
+                src="../assets/img/icon/icon_front.svg"
+                alt="Icône pour le développement web côté Front"
+              />
+            </div>
+            <p>HTML, CSS / SCSS</p>
+            <p>Javascript</p>
+            <p>Vue.js</p>
+            <p>React.js</p>
+            <p>Wordpress</p>
+            <router-link :to="{ name: 'Skills' }" class="knowing_more"
+              >En savoir plus</router-link
+            >
+          </div>
+        </div>
+        <!-- card 3 "dev front" -->
+
+        <!-- card 4 "dev back" -->
+        <div class="skills__content__ability__container">
+          <div class="skills__content__ability__container__card">
+            <h3>Développement Backend</h3>
+            <div class="bgImg">
+              <img
+                src="../assets/img/icon/icon_back.svg"
+                alt="Icône de développement web côté Back"
+              />
+            </div>
+            <p>PHP</p>
+            <p>SQL</p>
+            <p>Symphony</p>
+            <router-link :to="{ name: 'Skills' }" class="knowing_more"
+              >En savoir plus</router-link
+            >
+          </div>
+        </div>
+      </div>
       <!-- card 4 "dev back" -->
-      <div class="skills__container__card">
-        <h3>Développement Backend</h3>
-        <div class="bgImg">
-          <img
-            src="../assets/img/icon/icon_back.svg"
-            alt="Icône de développement web côté Back"
-          />
-        </div>
-        <p>PHP</p>
-        <p>SQL</p>
-        <p>Symphony</p>
-        <router-link :to="{ name: 'Skills' }" class="knowing_more"
-          >En savoir plus</router-link
-        >
-      </div>
-      <!-- card 4 "dev front" -->
+      <!-- Web Developpement -->
+
+      <!-- Uploading CV -->
     </div>
     <div class="skills__uploads">
-      <p>télécharger mon CV :</p>
-      <button href="#" target="_blank">Version pour écrans</button>
-      <hr />
-      <button href="#" target="_blank">Version imprimable</button>
+      <h3>télécharger mon CV :</h3>
+      <div class="skills__uploads__content">
+        <button href="#" target="_blank">Version pour écrans</button>
+        <hr />
+        <button href="#" target="_blank">Version imprimable</button>
+      </div>
     </div>
+    <!-- Uploading CV -->
   </section>
   <!-- fin SECTION 3  -->
 
@@ -387,16 +410,12 @@
       </div>
     </div>
   </section>
-  <!-- début SECTION CONTACT  -->
+  <!-- fin SECTION CONTACT  -->
 </template>
-
-
 
 /********************************/ /*********** END HTML ***********/
 /********************************/ /******** BEGINING STYLE ********/
 /********************************/
-
-
 
 <style lang="scss">
 /* RESETS*/
@@ -462,10 +481,13 @@ strong {
   }
 
   &__socialNetworks {
-    margin: 0 48px 48px 0;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    margin: 24px;
 
     a {
-      margin: 0 8px 48px 8px;
+      margin: 16px;
     }
   }
 }
@@ -481,6 +503,7 @@ strong {
   justify-content: flex-end;
   padding: 48px;
   margin: 24px 0px;
+  z-index: -1;
 
   a {
     position: relative;
@@ -523,17 +546,15 @@ strong {
   &__header,
   &__portrait,
   &__text {
-    width: 30%;
+    width: 30vw;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0 16px;
     gap: 32px;
   }
 
   &__header {
     p {
-      margin: 32px 0;
       color: #003f8b;
       font-size: 20px;
       font-family: "Nunito", sans-serif;
@@ -557,7 +578,8 @@ strong {
     display: flex;
 
     img {
-      width: 75%;
+      width: 30vw;
+      height: calc(30vw + 0vh);
     }
   }
 
@@ -580,83 +602,135 @@ strong {
 
 /*** début SECTION 3 "SKILLS" ***/
 .skills {
-  &__container {
+  &__content {
     display: flex;
-    margin: 48px 0;
-    justify-content: space-around;
-    gap: 32px;
+    flex-direction: row;
     width: 100%;
 
-    &__card {
-      width: 100%;
-      padding: 48px 0;
-      gap: 32px;
+    &__ability {
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      background: rgb(0, 24, 52);
-      background: -moz-linear-gradient(
-        180deg,
-        rgba(0, 24, 52, 1) 0%,
-        rgba(144, 193, 252, 1) 100%
-      );
-      background: -webkit-linear-gradient(
-        180deg,
-        rgba(0, 24, 52, 1) 0%,
-        rgba(144, 193, 252, 1) 100%
-      );
-      background: linear-gradient(
-        180deg,
-        rgba(0, 24, 52, 1) 0%,
-        rgba(144, 193, 252, 1) 100%
-      );
-      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#001834",endColorstr="#90c1fc",GradientType=1);
-      border-radius: 16px;
+      flex-direction: row;
+      width: 50%;
+      height: 70vh;
 
-      h3 {
-        color: #f6faff;
-      }
-
-      .bgImg {
-        width: 250px;
-        height: 250px;
-        border-radius: 50%;
-        background-color: #b9d8ff;
+      &__container {
         display: flex;
         justify-content: center;
-        align-items: center;
-
-        img {
-          width: 75%;
-        }
-      }
-
-      p {
-        width: 100%;
-        color: #f6faff;
-        font-family: "Roboto", sans-serif;
-        font-size: 16px;
-      }
-
-      .knowing_more {
-        margin-top: auto;
-        font-size: 24px;
-        color: #f6faff;
-        text-decoration: none;
-        font-family: "Nunito", sans-serif;
-        border: solid 3px #f6faff;
-        padding: 8px 32px;
+        background-color: #003f8b;
         border-radius: 8px;
+        width: 40%;
+        margin: 0 auto;
+        padding: 24px;
+
+        &__card {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 24px;
+
+          h3 {
+            color: #f6faff;
+          }
+
+          .bgImg {
+            background-color: #f6faff;
+            width: 13vw;
+            height: calc(13vw + 0vh);
+            // padding: 32px;
+            border-radius: 50%;
+            display: flex;
+
+            img {
+              margin: auto;
+              width: 60%;
+            }
+          }
+          p {
+            font-family: "Nunito", sans-serif;
+            font-size: 16px;
+            color: #f6faff;
+            text-align: center;
+          }
+          a {
+            margin-top: auto;
+            color: #f6faff;
+            font-family: "Nunito", sans-serif;
+            text-decoration: none;
+            text-align: center;
+            font-size: 20px;
+            padding: 8px 32px;
+            border: solid 2px #f6faff;
+            border-radius: 8px;
+            transition: all 0.3s ease-out;
+            overflow: hidden;
+            animation-delay: box-shadow 0.6s;
+            animation: 0.3s;
+          }
+          a::after {
+            position: absolute;
+            content: " ";
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transition: 0.3s ease-out;
+            transform: scale(0.1);
+          }
+          a:hover {
+            color: #f6faff;
+            border: none;
+            background-color: transparent;
+            border: solid 2px #f6faff;
+
+            // 0px 0px 30px green;
+          }
+          // a:hover {
+          //   box-shadow: 3px 3px 20px darkorange,
+          //   -3px -3px 20px darkorange,
+          //   3px -3px 20px darkorange,
+          //   -3px 3px 20px darkorange;
+          //   animation-delay: 0.6s;
+          //   animation: pulse 3s,
+          // }
+          a:hover::after {
+            background-color: darkorange;
+            transform: scale(2);
+          }
+
+          @keyframes shadow-box {
+            0% {
+              box-shadow: 0px 0px 0px darkorange;
+            }
+            50% {
+              box-shadow: 0px 0px 20px darkorange;
+            }
+            100% {
+              box-shadow: 0px 0px 0px darkorange;
+            }
+          }
+        }
       }
     }
   }
+
   &__uploads {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
-    gap: 48px;
+    margin: inherit;
+    width: 100%;
 
+    h3 {
+      width: 30%;
+    }
+    &__content {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      width: 70%;
+    }
+
+    h3,
     p {
       font-size: 24px;
       font-family: "Roboto", sans-serif;
@@ -718,16 +792,12 @@ strong {
     border-radius: 16px;
 
     &__img {
-      display: flex;
-      width: 300px;
+        width: 30vw;
 
-      img {
-        max-width: 70%;
-        min-width: 30%;
-        margin: auto;
+        img {
+          width: 80%;
+        }
       }
-    }
-
     &__content {
       display: flex;
       flex-direction: column;
@@ -811,16 +881,19 @@ strong {
     justify-content: space-around;
     align-items: center;
     padding-bottom: 48px;
+    margin: 48px;
     border-radius: 16px;
 
     &__card {
-      width: 30%;
+      width: 30vw;
+      height: 110vh;
       display: flex;
       flex-direction: column;
       align-items: center;
       background-color: rgba(0, 63, 139, 0.25);
       backdrop-filter: blur(8px);
       padding: 32px;
+      margin: 16px;
       border-radius: 16px;
 
       h3 {
@@ -837,9 +910,8 @@ strong {
           max-width: 300px;
           max-height: 200px;
           margin: auto;
+          padding: 8px;
         }
-        // img:last-child {
-        // }
       }
 
       figcaption {
@@ -855,8 +927,9 @@ strong {
         padding: 8px 32px;
         background-color: transparent;
         color: #f6faff;
-        font-size: 20px;
+        font-size: 24px;
         cursor: pointer;
+        margin-top: auto;
       }
     }
   }
@@ -979,8 +1052,118 @@ strong {
 }
 /*** fin SECTION 6 "CONTACT" ***/
 
-@media screen and (min-width: 400px) and (max-width: 930px) {
+@media (max-width: 1000px) {
+  h2 {
+    margin-bottom: 24px;
+  }
+
+  .landing {
+    background: url(../assets/img/pictures/NEOWISE2.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    flex-direction: column-reverse;
+
+    &__header {
+      width: 80%;
+    }
+  }
+  .about,
+  .skills,
+  .hobbies,
+  .creations,
+  .contact {
+    padding: 24px;
+  }
+
+  .about {
+    &__text {
+      gap: 24px;
+    }
+  }
+
+  .skills__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__ability {
+      display: flex;
+      width: 100%;
+      height: 70vh;
+      margin-bottom: 24px;
+    }
+  }
+
+  .hobbies {
+    gap: 24px;
+
+    &__astro,
+    &__photo,
+    &__DP,
+    &__outdoor {
+      padding: 24px;
+      
+        &__content {
+          gap: 24px;
+          margin: 0 24px;
+        }
+    }
+  }
+
+  .creations {
+    &__cardsContainer {
+      flex-direction: column;
+      margin: auto;
+
+      &__card {
+        width: 100%;
+        height: auto;
+
+        h3 {
+          font-size: 24px;
+        }
+
+        img {
+          width: 90%;
+          max-width: 900px;
+          max-height: 600px;
+        }
+
+        figcaption {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+  .contact {
+
+    &__container {
+      display: flex;
+      flex-direction: column;
+      
+      &__text {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+
+        &__seek{
+          display: flex;
+          flex-direction: row;
+
+          h4 {
+            margin: 0;
+          }
+        }
+      }
+      &__content {
+        &__btn {
+          height: 100px;
+        }
+    }
+    }
+  }
 }
+
 
 @media (max-width: 400px) {
 }
