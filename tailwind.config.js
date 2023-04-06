@@ -1,9 +1,14 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./src/assets/main.css"
-  ],
+    './public/index.html',
+    './src/**/*.vue',
+    './src/**/*.js',],
   theme: {
+    colors: {
+      transparent: 'transparent',
+      blue: '#117DFF'
+    },
     extend: {},
   },
   plugins: [],
