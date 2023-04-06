@@ -37,11 +37,11 @@
   <!-- début SECTION 2 "A PROPOS" -->
   <section class="about">
     <div class="about__header">
-      <h2>Qui suis-je?</h2>
+      <h2 class="headerTwo">Qui suis-je?</h2>
       <p>
         Je m'appelle Alexis et je suis agé de 33ans en 2023 et suite à une reconversion
         professionnelle depuis les métiers de la restauration vers les métiers du Digital,
-        je suis à la recherche d'un emplois dans le <strong>Développement Web</strong>.
+        je suis à la recherche d'un emplois dans le <strong class="strong">Développement Web</strong>.
         Dynamique, sérieux et autonome, je suis impliqué dans mon travail et je m'intégre
         facilement dans une équipe.
       </p>
@@ -56,7 +56,7 @@
       <img src="../assets/img/pictures/portrait.png" alt="portrtait d'Alexis Carlier" />
     </div>
     <div class="about__text">
-      <h3>Du fourneau...</h3>
+      <h3 class="headerThree">Du fourneau...</h3>
       <p>
         La créativité et le sens du service m'a amener lors de mes années de collégien à
         m'intéressé aux métiers de la restauration et plus particulièrement à la cuisine.
@@ -66,7 +66,7 @@
         Cuisisne.
       </p>
 
-      <h3>... au clavier.</h3>
+      <h3 class="headerThree">... au clavier.</h3>
       <p>
         En 2018, lors d'une période de chômage, j'ai décier d'arrêter le métier la
         restauration, ce qui m'a ammené à effectuer une formation « Découverte Multimédia
@@ -82,7 +82,7 @@
 
   <section class="skills">
     <div class="skills__header">
-      <h2>Mes compétences</h2>
+      <h2 class="headerTwo">Mes compétences</h2>
     </div>
 
     <!-- web design  -->
@@ -91,7 +91,7 @@
         <!-- card 1 "graphisme" -->
         <div class="skills__content__ability__container">
           <div class="skills__content__ability__container__card">
-            <h3>Graphisme</h3>
+            <h3 class="headerThree">Graphisme</h3>
             <div class="bgImg">
               <img
                 src="../assets/img/icon/icon_graphisme.svg"
@@ -114,7 +114,7 @@
         <!-- card 2 "SEO" -->
         <div class="skills__content__ability__container">
           <div class="skills__content__ability__container__card">
-            <h3>Référencement Naturel</h3>
+            <h3 class="headerThree">Référencement Naturel</h3>
             <div class="bgImg">
               <img
                 src="../assets/img/icon/icon_SEO.svg"
@@ -137,7 +137,7 @@
         <!-- card 3 "dev front" -->
         <div class="skills__content__ability__container">
           <div class="skills__content__ability__container__card">
-            <h3>Développement Frontend</h3>
+            <h3 class="headerThree">Développement Frontend</h3>
             <div class="bgImg">
               <img
                 src="../assets/img/icon/icon_front.svg"
@@ -159,7 +159,7 @@
         <!-- card 4 "dev back" -->
         <div class="skills__content__ability__container">
           <div class="skills__content__ability__container__card">
-            <h3>Développement Backend</h3>
+            <h3 class="headerThree">Développement Backend</h3>
             <div class="bgImg">
               <img
                 src="../assets/img/icon/icon_back.svg"
@@ -181,7 +181,7 @@
       <!-- Uploading CV -->
     </div>
     <div class="skills__uploads">
-      <h3>télécharger mon CV :</h3>
+      <h3 class="headerThree">télécharger mon CV :</h3>
       <div class="skills__uploads__content">
         <button href="#" target="_blank">Version pour écrans</button>
         <hr />
@@ -194,7 +194,7 @@
 
   <!-- fin SECTION 4  -->
   <section class="hobbies">
-    <h2>Mes loisirs</h2>
+    <h2 class="headerTwo">Mes loisirs</h2>
     <div class="hobbies__astro">
       <div class="hobbies__astro__img">
         <img
@@ -203,7 +203,7 @@
         />
       </div>
       <div class="hobbies__astro__content">
-        <h3>L'Astronomie</h3>
+        <h3 class="headerThree">L'Astronomie</h3>
         <p>
           Quand j'était petit, ma soeur à reçue un livre sur l'astronomie dans laquelle
           j'ai vu une photo de
@@ -230,7 +230,7 @@
     </div>
     <div class="hobbies__photo">
       <div class="hobbies__photo__content">
-        <h3>La Photographie</h3>
+        <h3 class="headerThree">La Photographie</h3>
         <p>
           Lorsque j'ai commencer l'astronomie de manière plus concrète, j'ai acheter un
           appareil photo pour me familiarisier avec l'Astrophoto qui est un courant de la
@@ -257,7 +257,7 @@
         />
       </div>
       <div class="hobbies__DP__content">
-        <h3>Le Digital Painting</h3>
+        <h3 class="headerThree">Le Digital Painting</h3>
         <p>
           Aussi loin que je me souvienne, j'ai toujours aimer le dessin. Les arts
           plastiques au collège et à l'école était la matière dans laquelle je me
@@ -270,7 +270,7 @@
     </div>
     <div class="hobbies__outdoor">
       <div class="hobbies__outdoor__content">
-        <h3>Les activités outdoor</h3>
+        <h3 class="headerThree">Les activités outdoor</h3>
         <p>
           Étant plus jeune lors des vacances d'hiver j'allais chaques années en colo de
           ski ou j'ai pu apprendre le sowboard. C'est d'ailleurs là-bas où j'ai vraiment
@@ -298,10 +298,10 @@
 
   <!-- Début SECTION 5  -->
   <section class="creations">
-    <h2>Mes créations</h2>
+    <h2 class="headerTwo">Mes créations</h2>
     <div class="creations__cardsContainer">
       <div class="creations__cardsContainer__card">
-        <h3>Photographiques</h3>
+        <h3 class="headerThree">Photographiques</h3>
         <figure class="creations__cardsContainer__card__img">
           <img
             src="../assets/img/pictures/ceinture-orion.jpg"
@@ -326,7 +326,7 @@
         <button>Voir le Portfolio</button>
       </div>
       <div class="creations__cardsContainer__card">
-        <h3>Web</h3>
+        <h3 class="headerThree">Web</h3>
         <figure class="creations__cardsContainer__card__img">
           <img
             src="../assets/img/pictures/Logo-KA.png"
@@ -348,7 +348,7 @@
         <button>Voir le Portfolio</button>
       </div>
       <div class="creations__cardsContainer__card">
-        <h3>Graphiques</h3>
+        <h3 class="headerThree">Graphiques</h3>
         <figure class="creations__cardsContainer__card__img">
           <img
             src="../assets/img/pictures/Valence_illustrator.png"
@@ -379,7 +379,7 @@
   <!-- début SECTION CONTACT  -->
   <section class="contact">
     <div class="contact__header">
-      <h2>Contactez-moi!</h2>
+      <h2 class="headerTwo">Contactez-moi!</h2>
     </div>
     <div class="contact__container">
       <div class="contact__container__text">
@@ -425,20 +425,20 @@
   box-sizing: border-box;
 }
 
-h2 {
+.headerTwo {
   color: #003f8b;
   font-size: 40px;
   font-family: "Nunito", sans-serif;
   margin-bottom: 48px;
 }
 
-h3 {
+.headerThree {
   font-size: 20px;
   text-align: center;
   font-family: "Nunito", sans-serif;
   font-weight: 400;
 }
-strong {
+.strong {
   font-weight: 400;
 }
 /* RESETS*/

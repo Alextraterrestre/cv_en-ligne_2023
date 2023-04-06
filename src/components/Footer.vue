@@ -51,7 +51,6 @@
   font-weight: 400;
   background-color: #003f8b;
   padding: 16px 48px;
-  margin-bottom: 140px;
 
   .vue,
   .fol-law,
@@ -76,12 +75,16 @@
 
     .network {
       display: flex;
+      align-items: center;
       padding: 0 48px;
 
       & p {
         margin: 0px 8px;
       }
 
+      .folow{
+        display: flex;
+      }
       & a {
         margin: 8px;
         color: #f6faff;
@@ -91,6 +94,11 @@
       margin: 8px;
       color: #f6faff;
     }
+  }
+}
+@media (max-width: 1000px) {
+  .footer {
+      padding-bottom: 140px;
   }
 }
 </style>
