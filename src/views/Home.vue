@@ -39,10 +39,10 @@
     <div class="about__header">
       <h2 class="headerTwo">Qui suis-je?</h2>
       <p>
-        Je m'appelle Alexis et je suis agé de 33ans en 2023 et suite à une reconversion
+        Je m'appelle Alexis, je suis agé de 33ans en 2023 et suite à une reconversion
         professionnelle depuis les métiers de la restauration vers les métiers du Digital,
         je suis à la recherche d'un emplois dans le <strong class="strong">Développement Web</strong>.
-        Dynamique, sérieux et autonome, je suis impliqué dans mon travail et je m'intégre
+        Dynamique, sérieux et autonome, je suis impliqué dans mon travail et m'intégre
         facilement dans une équipe.
       </p>
       <router-link
@@ -53,7 +53,7 @@
       >
     </div>
     <div class="about__portrait">
-      <img src="../assets/img/pictures/portrait.png" alt="portrtait d'Alexis Carlier" />
+      <img src="../assets/img/pictures/buste.png" alt="portrtait d'Alexis Carlier" />
     </div>
     <div class="about__text">
       <h3 class="headerThree">Du fourneau...</h3>
@@ -910,7 +910,6 @@
           max-width: 300px;
           max-height: 200px;
           margin: auto;
-          padding: 8px;
         }
       }
 
@@ -930,6 +929,13 @@
         font-size: 24px;
         cursor: pointer;
         margin-top: auto;
+      }
+      button::before {
+        content: ">>";
+        background-color: #f6faff;
+        height: 240px;
+        width: 240px;
+        animation: all ease-out 0.6s;
       }
     }
   }
