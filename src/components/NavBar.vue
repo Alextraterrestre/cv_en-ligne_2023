@@ -1,9 +1,46 @@
+<script setup>
+/* Bacground color navbar */
+// import { ref } from "vue";
+
+// const isActive = ref(false);
+
+// const toggleActive = () => {
+//   isActive.value = !isActive.value;
+//   console.log(isActive.value);
+// };
+// Vue.directive('scroll', {
+//   inserted: function (el, binding) {
+//     let f = function (evt) {
+//       if (binding.value(evt, el)) {
+//         window.removeEventListener('scroll', f)
+//       }
+//     }
+//     window.addEventListener('scroll', f)
+//   }
+// })
+
+// main app
+
+
+/* homemade burgerMenu */
+
+/* bergerMenu Flowbite */
+import { Collapse } from "flowbite";
+
+const $targetEl = document.getElementById("targetEl");
+
+const options = {
+  onCollapse: () => {
+    console.log("l'élément à bien été collapser");
+  },
+};
+</script>
+
 <template>
   <div class="header">
-    <!-- DESKTOP NAVIGATION -->
     <div class="desktopHeader">
       <div class="desktopHeader__logo">
-        <router-link :to="{ name: 'Home' }" class="desktopHeader__links__link"
+        <router-link :to="{ name: 'Home' }" class="desktopHeader_logo"
           ><img
             class="logo"
             src="../assets/Logo-blanc.svg"
@@ -15,8 +52,8 @@
         <router-link
           :to="{ name: 'About' }"
           class="desktopHeader__links__link"
-          title='accès à la page "&Agrave propos"'
-          ><span></span>&Agrave propos</router-link
+          title='accès à la page "À propos"'
+          ><span></span>À propos</router-link
         >
         <router-link
           :to="{ name: 'Skills' }"
@@ -44,129 +81,151 @@
         >
       </nav>
     </div>
-    <!-- DESKTOP NAVIGATION -->
-
-    <!-- TABLET NAVIGATION -->
-    <div class="mobileHeader">
-      <nav class="mobileHeader__nav">
-        <router-link :to="{ name: 'Home' }" class="mobileHeader__nav__links"
-          ><img
-            class="logo"
-            src="../assets/logo-simple-blanc.svg"
-            alt="Logo du site"
-            title='accès à la page "Accueil"'
-          />ACCUEIL</router-link
-        >
+    <div class="tabletHeader">
+      <nav class="tabletHeader__list">
+        <div class="tabletHeader__logo">
+          <router-link :to="{ name: 'Home' }" class="desktopHeader_logo"
+            ><img
+              class="logo"
+              src="../assets/Logo-blanc.svg"
+              alt="Logo du site"
+              title='accès à la page "Accueil"'
+          /></router-link>
+        </div>
         <router-link
           :to="{ name: 'About' }"
-          class="mobileHeader__nav__links"
-          title='accès à la page "&Agrave propos"'
-          ><img src="../assets/img/icon/person-vcard.svg" alt="icône à propos" />&Agrave
-          propos</router-link
+          class="tabletHeader__list__link"
+          title='accès à la page "À propos"'
+          >À propos</router-link
         >
         <router-link
           :to="{ name: 'Skills' }"
-          class="mobileHeader__nav__links"
+          class="tabletHeader__list__link"
           title='accès à la page "Compétences"'
-          ><img
-            src="../assets/img/icon/journal-code.svg"
-            alt="icône mes compétences"
-          />Compétences</router-link
+          >Compétences</router-link
         >
         <router-link
           :to="{ name: 'Hobbies' }"
-          class="mobileHeader__nav__links"
+          class="tabletHeader__list__link"
           title='accès à la page "Loisirs"'
-          ><img
-            src="../assets/img/icon/moon-stars-fill.svg"
-            alt="icône"
-          />Loisirs</router-link
+          >Loisirs</router-link
         >
         <router-link
           :to="{ name: 'Portfolio' }"
-          class="mobileHeader__nav__links"
+          class="tabletHeader__list__link"
           title='accès à la page "Portfolio"'
-          ><img
-            src="../assets/img/icon/images.svg"
-            alt="icône portfolio"
-          />Portfolio</router-link
+          >Portfolio</router-link
         >
         <router-link
           :to="{ name: 'Contact' }"
-          class="mobileHeader__nav__links"
+          class="tabletHeader__list__link"
           title='accès à la page "Contact"'
-          ><img
-            src="../assets/img/icon/icone_plane_mobile.svg"
-            alt="icone contact"
-          />CONTACT</router-link
+          >Contact</router-link
         >
-
-        <label class="mobileHeader__nav__burgerMenu">
-          <input
-            type="checkbox"
-            class="mobileHeader__nav__burgerMenu__checkbox"
-            name="menu"
-            id="burgerMenu"
-          />
-          <span class="mobileHeader__nav__burgerMenu__top"></span>
-          <span class="mobileHeader__nav__burgerMenu__mid"></span>
-          <span class="mobileHeader__nav__burgerMenu__bot"></span>
-          <nav class="mobileHeader__nav__burgerMenu__nav">
+      </nav>
+    </div>
+    <div class="mobileHeader bg-blue-800">
+      <div class="mobileHeader__logo">
+        <router-link :to="{ name: 'Home' }" class="desktopHeader_logo"
+          ><img
+            class="mobileHeader__logo__img"
+            src="../assets/Logo-blanc.svg"
+            alt="Logo du site"
+            title='accès à la page "Accueil"'
+        /></router-link>
+      </div>
+      <button
+        id=" targetEl"
+        data-collapse-toggle="navbar-hamburger"
+        type="button"
+        class="inline-flex items-center justify-center w-15 h-15 text-sm focus:border-blue-50 border-2 rounded-xl dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+        aria-controls="navbar-hamburger"
+        aria-expanded="false"
+      >
+        <span class="sr-only">Open main menu</span>
+        <span
+          class="burger bg-blue-800 border-2 border-blue-50 rounded-lg text-blue-50 text-4xl"
+          aria-hidden="true"
+          fill="none"
+          viewBox="0 0 17 14"
+          >&#9776;</span
+        >
+      </button>
+      <div
+        class="hidden z-0 justify-center w-full absolute bottom-24 right-0"
+        id="navbar-hamburger"
+      >
+        <ul
+          class="burgerMenu z-10 h-auto p-4 flex flex-col items-center justify-around font-medium bg-blue-800 dark:bg-gray-800 dark:border-gray-700"
+        >
+          <li class="my-4">
             <router-link
               :to="{ name: 'About' }"
-              class="mobileHeader__nav__burgerMenu__nav__links"
-              title='accès à la page "&Agrave propos"'
-              >&Agrave propos</router-link
+              class="tabletHeader__list__link text-4xl text-blue-50 font-semibold"
+              title='accès à la page "À propos"'
+              >À propos</router-link
             >
+          </li>
+          <li class="my-4">
             <router-link
               :to="{ name: 'Skills' }"
-              class="mobileHeader__nav__burgerMenu__nav__links"
+              class="tabletHeader__list__link text-4xl text-blue-50 font-semibold"
               title='accès à la page "Compétences"'
               >Compétences</router-link
             >
+          </li>
+          <li class="my-4">
             <router-link
               :to="{ name: 'Hobbies' }"
-              class="mobileHeader__nav__burgerMenu__nav__links"
+              class="tabletHeader__list__link text-4xl text-blue-50 font-semibold"
               title='accès à la page "Loisirs"'
               >Loisirs</router-link
             >
+          </li>
+          <li class="my-4">
             <router-link
               :to="{ name: 'Portfolio' }"
-              class="mobileHeader__nav__burgerMenu__nav__links"
+              class="tabletHeader__list__link text-4xl text-blue-50 font-semibold"
               title='accès à la page "Portfolio"'
               >Portfolio</router-link
             >
-          </nav>
-        </label>
-      </nav>
+          </li>
+        </ul>
+      </div>
+      <div class="mobileHeader__contact">
+        <router-link
+          :to="{ name: 'Contact' }"
+          class="mobileHeader__contact__img"
+          title='accès à la page "Contact"'
+          ><img
+            src="../assets/img/icon/icone_plane_mobile.svg"
+            alt="icône de lien vers la page contact"
+        /></router-link>
+      </div>
     </div>
-    <!-- MOBILE NAVIGATION -->
   </div>
-  <div class="bgBlue"></div>
+  <!-- <div  v-scroll="handleScroll" class="bgBlue"></div> -->
 </template>
 
 <style lang="scss">
-/*** INITIAL NAVBAR****/
-.header {
-  background-color: transparent;
-  display: flex;
-  width: 100%;
-  // height: 100vh;
-  position: fixed;
-  z-index: 10;
+.burgerMenu {
+  height: 30vh;
 }
 
-.desktopHeader {
+.desktopHeader,
+.tabletHeader {
   height: 100px;
   width: 100%;
   background-color: rgba(0, 63, 139, 0.05);
   backdrop-filter: blur(4px);
+  box-shadow: 0 5px 50px rgba(0, 0, 0, 0.5);
   padding: 0px 48px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   position: fixed;
   z-index: 10;
+  transition: all ease-in-out 2s;
 
   &__logo {
     width: 112px;
@@ -176,16 +235,45 @@
 
   &__links {
     padding: 0px 48px 0px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
     &__link {
       font-family: "Nunito";
       color: #f6faff;
       text-decoration: none;
-      margin-right: 40px;
       font-size: 18px;
       position: relative;
       transition: ease-out 0.1s;
       transition-delay: 0.2s;
+      margin: 0px 16px;
+    }
+    &__link::before {
+      z-index: -1;
+      position: absolute;
+      display: block;
+      height: 3px;
+      width: 200%;
+      filter: blur(1px);
+      background: linear-gradient(90deg, transparent, whitesmoke);
+      border-radius: 25%;
+      left: -200%;
+      top: 110%;
+      transition: ease-out 0.2s;
+      opacity: 0;
+    }
+
+    &__link::before:hover {
+      left: 50%;
+      transition: 0.2s;
+      background-color: whitesmoke;
+      box-shadow: 4px 4px 32px 8px #71b0ff, -4px 4px 32px 8px #71b0ff,
+        -4px -4px 32px 8px #71b0ff, 4px -4px 32px 8px #71b0ff;
+      border-radius: 35%;
+      width: 100%;
+      left: 0%;
+      opacity: 1;
     }
 
     &__link span {
@@ -261,7 +349,21 @@
   }
 }
 
+.tabletHeader,
+.mobileHeader {
+  display: none;
+}
+
 .bgBlue {
+  display: none;
+}
+
+.active {
+  display: block;
+  height: 96px;
+  width: 100%;
+  z-index: 0;
+  position: fixed;
   background-color: #003f8b;
   // background: rgb(0,63,139);
   background: linear-gradient(
@@ -278,147 +380,167 @@
     rgba(5, 35, 130, 0.1) 90%,
     rgba(5, 35, 130, 0) 100%
   );
-
-  height: 100px;
-  width: 100%;
-  z-index: 0;
-  position: fixed;
 }
 
-.mobileHeader {
-  width: 100%;
-  height: 15vh;
-  backdrop-filter: blur(4px);
-  background: rgb(5, 35, 130);
-  background: linear-gradient(
-    180deg,
-    rgba(5, 35, 130, 0) 0%,
-    rgba(5, 35, 130, 0.2) 20%,
-    rgba(3, 48, 134, 0.4) 40%,
-    rgba(0, 63, 139, 0.6) 60%,
-    rgba(0, 63, 139, 0.8) 80%,
-    rgba(0, 63, 139, 1) 100%
-  );
-  // margin-top: auto;
-  display: none;
+// .bgBlueMobile {
+//   height: 50vh;
+//   width: 110%;
+//   backdrop-filter: blur(7px);
+//   border: solid 2px #f6faff;
+//   border-radius: 8px;
+//   z-index: 0;
+//   position: absolute;
+//   left: 0;
+//   right: 0;
+//   background-color: #003f8b;
+//   // background: rgb(0,63,139);
+//   background: linear-gradient(
+//     180deg,
+//     rgba(0, 63, 139, 1) 0%,
+//     rgba(0, 63, 139, 0.9) 10%,
+//     rgba(0, 63, 139, 0.8) 20%,
+//     rgba(3, 48, 134, 0.7) 30%,
+//     rgba(5, 35, 130, 0.6) 40%,
+//     rgba(5, 35, 130, 0.5) 50%,
+//     rgba(5, 35, 130, 0.4) 60%,
+//     rgba(5, 35, 130, 0.3) 70%,
+//     rgba(5, 35, 130, 0.2) 80%,
+//     rgba(5, 35, 130, 0.1) 90%,
+//     rgba(5, 35, 130, 0) 100%
+//   );
+// }
 
-  &__nav {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-
-    &__links {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      color: #f6faff;
-      font-family: "Nunito";
-      text-decoration: none;
-      font-size: 20px;
-      margin: 16px 16px;
-
-      img {
-        height: 40px;
-      }
-    }
-
-    /**** BURGER MENU****/
-    &__burgerMenu {
-      width: 48px;
-      height: 48px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      border: solid 2px whitesmoke;
-      position: relative;
-
-      &__checkbox {
-        display: none;
-        z-index: 10;
-      }
-
-      &__top,
-      &__mid,
-      &__bot {
-        width: 32px;
-        height: 4px;
-        border-radius: 8px;
-        background-color: #f6faff;
-        position: absolute;
-        left: 6px;
-        top: 20px;
-        transition: transform 0.4s, opacity 0.8s;
-        z-index: 1;
-      }
-
-      &__top {
-        transform: translateY(-0.8rem);
-      }
-      &__bot {
-        transform: translateY(0.8rem);
-      }
-
-      &__checkbox:checked ~ &__top {
-        transform: rotate(45deg);
-      }
-      &__checkbox:checked ~ &__mid {
-        opacity: 0;
-      }
-      &__checkbox:checked ~ &__bot {
-        transform: rotate(-45deg);
-      }
-      &__checkbox:checked ~ &__nav {
-        z-index: -100;
-        position: absolute;
-        right: -100px;
-        top: -400px;
-        background-color: red;
-        width: 1100px;
-        height: 800px;
-      }
-    }
-  }
-
-  /**** BURGER MENU****/
-}
-
-@media (max-width: 1000px) {
-  .mobileHeader,
-  .burgerMenu {
-    display: block;
-    display: flex;
-    align-items: center;
-    position: fixed;
-    bottom: 0%;
-  }
-
+@media (max-width: 1000px) and (min-width: 650px) {
   .desktopHeader,
-  .mobileHeader__nav__burgerMenu,
-  .bgBlue {
+  .mobileHeader {
     display: none;
   }
-}
 
-@media (max-width: 725px) {
-  .mobileHeader__nav {
+  .tabletHeader {
+    padding: 0px 24px;
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    margin: 16px;
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+
+    &__logo {
+      margin: 0;
+    }
+
+    &__list {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      align-items: flex-end;
+
+      &__link {
+        color: #f6faff;
+        font-weight: 600;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-family: "Nunito", sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      &__link:nth-child(2)::before,
+      &__link:nth-child(3)::before,
+      &__link:nth-child(4)::before,
+      &__link:nth-child(5)::before,
+      &__link:nth-child(6)::before {
+        width: 48px;
+        position: absolute;
+        bottom: 33%;
+        text-decoration: none;
+      }
+
+      &__link:nth-child(2)::before {
+        content: url(@/assets/img/icon/person-vcard.svg);
+      }
+
+      &__link:nth-child(3)::before {
+        content: url(@/assets/img/icon/journal-code.svg);
+      }
+      &__link:nth-child(4)::before {
+        content: url(@/assets/img/icon/moon-stars-fill.svg);
+      }
+
+      &__link:nth-child(5)::before {
+        content: url(@/assets/img/icon/image-fill.svg);
+      }
+
+      &__link:nth-child(6)::before {
+        content: url(@/assets/img/icon/icone_plane_mobile.svg);
+      }
+    }
   }
 
-  .mobileHeader__nav__links:nth-child(2),
-  .mobileHeader__nav__links:nth-child(3),
-  .mobileHeader__nav__links:nth-child(4),
-  .mobileHeader__nav__links:nth-child(5) {
-    display: none;
-  }
-
-  .mobileHeader__nav__burgerMenu {
-    display: block;
+  .active {
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    background-color: #003f8b;
+    // background: rgb(0,63,139);
+    background: linear-gradient(
+      0deg,
+      rgba(0, 63, 139, 1) 0%,
+      rgba(0, 63, 139, 0.9) 10%,
+      rgba(0, 63, 139, 0.8) 20%,
+      rgba(3, 48, 134, 0.7) 30%,
+      rgba(5, 35, 130, 0.6) 40%,
+      rgba(5, 35, 130, 0.5) 50%,
+      rgba(5, 35, 130, 0.4) 60%,
+      rgba(5, 35, 130, 0.3) 70%,
+      rgba(5, 35, 130, 0.2) 80%,
+      rgba(5, 35, 130, 0.1) 90%,
+      rgba(5, 35, 130, 0) 100%
+    );
   }
 }
 
+@media (max-width: 650px) {
+  .desktopHeader,
+  .tabletHeader {
+    display: none;
+  }
+
+  .mobileHeader {
+    width: 100%;
+    height: 96px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 0;
+    z-index: 10;
+
+    &__logo {
+      width: 30%;
+
+      &__img {
+        width: 50%;
+      }
+    }
+    span.burger {
+      font-size: 24px;
+      height: 44px;
+      width: 44px;
+    }
+    &__contact {
+      width: 30%;
+      display: flex;
+
+      &__img {
+        width: 40%;
+        margin-left: auto;
+      }
+    }
+  }
+}
 /*** INITIAL NAVBAR****/
 </style>

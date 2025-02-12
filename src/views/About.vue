@@ -1,11 +1,12 @@
 <template>
 
-  /** TEXTE EN ATTENTE **/
-  <div>
+  <div class="hidden">
+    <!-- contenus -->
     <pre>Lors de mes dernières années de collège j'ai décider de m'orienter vers les métiers de restauration car je suis quelqu'un de naturellement créatif avec un sens aiguiser pour le service.
         Ces métiers, notament celui de cuisinier me permettait de mettre ces qualités en avant. J'ai donc passé un BEP au <a href="https://www.lyceecfarabelais-lyondardilly.fr/">Lycée François Rabelais</a> dans le Rhône , puis Un BAC PRO au <a href="https://lyc-saint-exupery-bellegarde.ent.auvergnerhonealpes.fr/formations/formations-professionnelles/hotellerie/">Lycée Saint-Exupéry de Bellegarde-sur-Valserine</a> dans l'Ain et un BTS au <a href="https://www.lhsl.fr/">Lycée Technique Hôtellier Savoie-Léman</a> en Haute-Savoie.
         Durant ces années d'études, j'ai pu développer une certaine polyvalence car j'y ai apprit différents métiers allant de celui de cuisinier, pâtissier, serveur, barman que j'ai pu exercer lors de mes différentes expériences professionnelles.
     </pre>
+    less
     <p>
       Après 15 dans la restauration, j'ai décider de me réorienté vers les métier du
       digital suite à une Formation "Découcerte Multimédia".
@@ -31,9 +32,9 @@
       Formation Développeur Web & Web Mobile de niveau 5 au RNCP (niveau BAC +2) avec la
       CCI de la Drôme, titre que j'ai obtenus suite à l'examen finale.
     </p>
+    <!-- contenus -->
   </div>
-  /** TEXTE EN ATTENTE **/
-  <div class="bg-blue-600">
+  <div class="bg-blue-600 hidden">
     <p class="text-3xl text-blue-950">Salut la compagnie!!</p>
     <p class="text-3xl text-blue-950">Salut la compagnie!!</p>
     <p class="text-3xl text-blue-950">Salut la compagnie!!</p>

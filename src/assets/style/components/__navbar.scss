@@ -1,0 +1,426 @@
+.header {
+    background-color: transparent;
+    display: flex;
+    width: 100%;
+    // height: 100vh;
+    position: fixed;
+    z-index: 10;
+  }
+  
+  .desktopHeader,
+  .tabletHeader {
+    height: 100px;
+    width: 100%;
+    background-color: rgba(0, 63, 139, 0.05);
+    backdrop-filter: blur(4px);
+    padding: 0px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    z-index: 10;
+    transition: all ease-in-out 2s;
+  
+    &__logo {
+      width: 112px;
+      height: 80px;
+      margin-right: 40px;
+    }
+  
+    &__links {
+      padding: 0px 48px 0px 0px;
+  
+      &__link {
+        font-family: "Nunito";
+        color: #f6faff;
+        text-decoration: none;
+        margin-right: 40px;
+        font-size: 18px;
+        position: relative;
+        transition: ease-out 0.1s;
+        transition-delay: 0.2s;
+      }
+  
+      &__link span {
+        z-index: -1;
+        position: absolute;
+        display: block;
+        height: 3px;
+        width: 200%;
+        filter: blur(1px);
+        background: linear-gradient(90deg, transparent, whitesmoke);
+        border-radius: 25%;
+        left: -200%;
+        top: 110%;
+        transition: ease-out 0.2s;
+        opacity: 0;
+      }
+  
+      &__link:hover span {
+        left: 50%;
+        transition: 0.2s;
+        background-color: whitesmoke;
+        box-shadow: 4px 4px 32px 8px #71b0ff, -4px 4px 32px 8px #71b0ff,
+          -4px -4px 32px 8px #71b0ff, 4px -4px 32px 8px #71b0ff;
+        border-radius: 35%;
+        width: 100%;
+        left: 0%;
+        opacity: 1;
+      }
+  
+      &__contact-btn {
+        display: inline-flex;
+        border: solid 2px whitesmoke;
+        border-radius: 8px;
+        text-transform: uppercase;
+        font-weight: 600;
+        padding: 8px 32px;
+        color: whitesmoke;
+        text-decoration: none;
+        font-family: "Nunito";
+        font-size: 18px;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+      }
+  
+      &__contact-btn:hover {
+        transition: color 0s linear 0s;
+      }
+  
+      &__contact-btn::before {
+        content: "";
+        color: aliceblue;
+        background-color: #0095ff;
+        opacity: 0;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        height: 1px;
+        width: 1px;
+        border-radius: 50%;
+        overflow: hidden;
+        z-index: -1;
+        transition: ease-out 0.3s;
+      }
+  
+      &__contact-btn:hover::before {
+        width: 200px;
+        height: 200px;
+        top: -200%;
+        left: -20%;
+        opacity: 1;
+      }
+    }
+  }
+  
+  .tabletHeader,
+  .mobileHeader {
+    display: none;
+  }
+  
+  .bgBlue {
+    height: 100px;
+    width: 100%;
+    z-index: 0;
+    position: fixed;
+    background-color: #003f8b;
+    // background: rgb(0,63,139);
+    background: linear-gradient(
+      180deg,
+      rgba(0, 63, 139, 1) 0%,
+      rgba(0, 63, 139, 0.9) 10%,
+      rgba(0, 63, 139, 0.8) 20%,
+      rgba(3, 48, 134, 0.7) 30%,
+      rgba(5, 35, 130, 0.6) 40%,
+      rgba(5, 35, 130, 0.5) 50%,
+      rgba(5, 35, 130, 0.4) 60%,
+      rgba(5, 35, 130, 0.3) 70%,
+      rgba(5, 35, 130, 0.2) 80%,
+      rgba(5, 35, 130, 0.1) 90%,
+      rgba(5, 35, 130, 0) 100%
+    );
+  }
+  
+  // .bgBlueMobile {
+  //   height: 50vh;
+  //   width: 110%;
+  //   backdrop-filter: blur(7px);
+  //   border: solid 2px #f6faff;
+  //   border-radius: 8px;
+  //   z-index: 0;
+  //   position: absolute;
+  //   left: 0;
+  //   right: 0;
+  //   background-color: #003f8b;
+  //   // background: rgb(0,63,139);
+  //   background: linear-gradient(
+  //     180deg,
+  //     rgba(0, 63, 139, 1) 0%,
+  //     rgba(0, 63, 139, 0.9) 10%,
+  //     rgba(0, 63, 139, 0.8) 20%,
+  //     rgba(3, 48, 134, 0.7) 30%,
+  //     rgba(5, 35, 130, 0.6) 40%,
+  //     rgba(5, 35, 130, 0.5) 50%,
+  //     rgba(5, 35, 130, 0.4) 60%,
+  //     rgba(5, 35, 130, 0.3) 70%,
+  //     rgba(5, 35, 130, 0.2) 80%,
+  //     rgba(5, 35, 130, 0.1) 90%,
+  //     rgba(5, 35, 130, 0) 100%
+  //   );
+  // }
+  
+  @media (max-width: 1000px) and (min-width: 650px) {
+    .desktopHeader,
+    .mobileHeader {
+      display: none;
+    }
+  
+    .tabletHeader {
+      padding: 0px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      overflow: hidden;
+      position: fixed;
+      bottom: 0;
+  
+      &__logo {
+        margin: 0;
+      }
+  
+      &__list {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        align-items: flex-end;
+  
+        &__link {
+          color: #f6faff;
+          font-weight: 600;
+          text-transform: uppercase;
+          font-family: "Nunito", sans-serif;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+  
+        &__link:nth-child(2)::before {
+          width: 48px;
+          content: url(@/assets/img/icon/person-vcard.svg);
+          position: absolute;
+          bottom: 33%;
+        }
+        &__link:nth-child(3)::before {
+          width: 48px;
+          content: url(@/assets/img/icon/journal-code.svg);
+          position: absolute;
+          bottom: 33%;
+        }
+        &__link:nth-child(4)::before {
+          width: 48px;
+          content: url(@/assets/img/icon/moon-stars-fill.svg);
+          position: absolute;
+          bottom: 33%;
+        }
+        &__link:nth-child(5)::before {
+          width: 48px;
+          content: url(@/assets/img/icon/image-fill.svg);
+          position: absolute;
+          bottom: 33%;
+        }
+        &__link:nth-child(6)::before {
+          width: 48px;
+          content: url(@/assets/img/icon/icone_plane_mobile.svg);
+          position: absolute;
+          bottom: 33%;
+        }
+      }
+    }
+  
+    .bgBlue {
+      overflow: hidden;
+      position: fixed;
+      bottom: 0;
+      background-color: #003f8b;
+      // background: rgb(0,63,139);
+      background: linear-gradient(
+        0deg,
+        rgba(0, 63, 139, 1) 0%,
+        rgba(0, 63, 139, 0.9) 10%,
+        rgba(0, 63, 139, 0.8) 20%,
+        rgba(3, 48, 134, 0.7) 30%,
+        rgba(5, 35, 130, 0.6) 40%,
+        rgba(5, 35, 130, 0.5) 50%,
+        rgba(5, 35, 130, 0.4) 60%,
+        rgba(5, 35, 130, 0.3) 70%,
+        rgba(5, 35, 130, 0.2) 80%,
+        rgba(5, 35, 130, 0.1) 90%,
+        rgba(5, 35, 130, 0) 100%
+      );
+    }
+  }
+  
+  @media (max-width: 650px) {
+    .desktopHeader,
+    .tabletHeader {
+      display: none;
+    }
+  
+    .mobileHeader {
+      width: 100%;
+      height: 96px;
+      padding: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      backdrop-filter: blur(4px);
+      position: fixed;
+      bottom: 0;
+      z-index: 10;
+  
+      &__logo {
+        width: 30%;
+  
+        &__img {
+          width: 50%;
+        }
+      }
+  
+      &__menu {
+        width: 30%;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        background-color: rgba(0, 149, 255, 0.8);
+        backdrop-filter: blur(8px);
+        width: 64px;
+        height: 64px;
+        border-radius: 12px;
+        border: solid 4px #f6faff;
+        cursor: pointer;
+  
+        &__container {
+          height: 48px;
+          width: 48px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          position: relative;
+          bottom: 20px;
+  
+          .burgerTop,
+          .burgerMid,
+          .burgerBot {
+            height: 4px;
+            width: 32px;
+            background-color: #f6faff;
+            border-radius: 2px;
+          }
+  
+          .burgerTop {
+            transform: translateY(-6px);
+          }
+  
+          .burgerBot {
+            transform: translateY(6px);
+          }
+  
+          // .crossTop,
+          // .crossMid,
+          // .crossBot {
+          //   height: 4px;
+          //   width: 32px;
+          //   background-color: #f6faff;
+          //   border-radius: 2px;
+          // }
+  
+          // .crossTop {
+          //   width: 32px;
+          //   transform: rotate(45deg);
+          //   position: relative;
+          //   top: 5%;
+          //   bottom: 8px;
+          // }
+  
+          // .crossMid {
+          //   opacity: 0;
+          // }
+  
+          // .crossBot {
+          //   transform: rotate(-45deg);
+          //   width: 32px;
+          //   position: relative;
+          //   bottom: 5%;
+          //   bottom: 4px;
+          // }
+        }
+  
+        &__nav {
+          height: 50vh;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+          align-items: center;
+          visibility: hidden;
+          z-index: -2;
+  
+          &__link {
+            font-family: "Nunito";
+            font-size: 40px;
+            color: #f6faff;
+            font-weight: 200;
+            text-shadow: 0px 0px 10px #71b0ff, 0px 0px 14px #0095ff, 0px 0px 20px #003f8b,
+              0px 0px 4px #f6faff;
+          }
+        }
+      }
+  
+      .active {
+        width: 70%;
+        height: 60vh;
+        border-radius: 12px;
+        border: solid 4px #f6faff;
+        position: absolute;
+        bottom: 8px;
+        left: 16%;
+      }
+  
+      // .activated {
+      //   visibility: visible;
+      // }
+  
+      &__contact {
+        width: 30%;
+  
+        img {
+          width: 40%;
+          margin-left: auto;
+        }
+      }
+    }
+  
+    .bgBlue {
+      overflow: hidden;
+      position: fixed;
+      bottom: 0;
+      background-color: #003f8b;
+      // background: rgb(0,63,139);
+      background: linear-gradient(
+        0deg,
+        rgba(0, 63, 139, 1) 0%,
+        rgba(0, 63, 139, 0.9) 10%,
+        rgba(0, 63, 139, 0.8) 20%,
+        rgba(3, 48, 134, 0.7) 30%,
+        rgba(5, 35, 130, 0.6) 40%,
+        rgba(5, 35, 130, 0.5) 50%,
+        rgba(5, 35, 130, 0.4) 60%,
+        rgba(5, 35, 130, 0.3) 70%,
+        rgba(5, 35, 130, 0.2) 80%,
+        rgba(5, 35, 130, 0.1) 90%,
+        rgba(5, 35, 130, 0) 100%
+      );
+    }
+  }

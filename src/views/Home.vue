@@ -1,6 +1,6 @@
 <template>
   <!-- début SECTION 1 "ACCUEIL" -->
-  <section class="landing">
+  <section class="landing" id="top">
     <div class="landing__header">
       <h1 class="landing__header_h1">Bienvenus sur mon Curiculum Vitae en ligne</h1>
       <p>Jetez un oeil!</p>
@@ -41,9 +41,9 @@
       <p>
         Je m'appelle Alexis, je suis agé de 33ans en 2023 et suite à une reconversion
         professionnelle depuis les métiers de la restauration vers les métiers du Digital,
-        je suis à la recherche d'un emplois dans le <strong class="strong">Développement Web</strong>.
-        Dynamique, sérieux et autonome, je suis impliqué dans mon travail et m'intégre
-        facilement dans une équipe.
+        je suis à la recherche d'un emplois dans le
+        <strong class="strong">Développement Web</strong>. Dynamique, sérieux et autonome,
+        je suis impliqué dans mon travail et m'intégre facilement dans une équipe.
       </p>
       <router-link
         :to="{ name: 'About' }"
@@ -187,6 +187,10 @@
         <hr />
         <button href="#" target="_blank">Version imprimable</button>
       </div>
+      <div class="skills__uploads__contentMobile">
+        <button href="#" target="_blank">Pour écrans</button>
+        <button href="#" target="_blank">Imprimable</button>
+      </div>
     </div>
     <!-- Uploading CV -->
   </section>
@@ -296,7 +300,7 @@
   </section>
   <!-- fin SECTION 4  -->
 
-  <!-- Début SECTION 5  -->
+  <!-- Début SECTION 5 CREATIONS  -->
   <section class="creations">
     <h2 class="headerTwo">Mes créations</h2>
     <div class="creations__cardsContainer">
@@ -336,7 +340,7 @@
         <figcaption>Projet K.A</figcaption>
         <figure class="creations__cardsContainer__card__img">
           <img
-            src="../assets/img/icon/logo_saint_paul_sur_yenne_blanc.svg"
+            src="../assets/img/pictures/logo-mairie-saint-paul-sur-yenne.png"
             alt="Logo de la mairie de Saint-Paul"
           />
         </figure>
@@ -441,7 +445,6 @@
 .strong {
   font-weight: 400;
 }
-/* RESETS*/
 
 /*** début style  SECTION 1 "ACCUEIL" ***/
 .landing {
@@ -481,10 +484,8 @@
   }
 
   &__socialNetworks {
-    width: 20%;
     display: flex;
-    justify-content: center;
-    margin: 24px;
+    justify-content: space-between;
 
     a {
       margin: 16px;
@@ -551,6 +552,10 @@
     flex-direction: column;
     align-items: center;
     gap: 32px;
+  }
+
+  &__portrait {
+    width: 100%;
   }
 
   &__header {
@@ -693,36 +698,22 @@
           //   animation: pulse 3s,
           // }
           a:hover::after {
-            background-color: darkorange;
+            background-color: #0095ff;
             transform: scale(2);
-          }
-
-          @keyframes shadow-box {
-            0% {
-              box-shadow: 0px 0px 0px darkorange;
-            }
-            50% {
-              box-shadow: 0px 0px 20px darkorange;
-            }
-            100% {
-              box-shadow: 0px 0px 0px darkorange;
-            }
           }
         }
       }
     }
   }
 
+  /* UPLOADS */
+
   &__uploads {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    margin: inherit;
     width: 100%;
 
-    h3 {
-      width: 30%;
-    }
     &__content {
       display: flex;
       flex-direction: row;
@@ -761,7 +752,12 @@
       background-color: #b9d8ff;
       border-radius: 8px;
     }
+
+    &__contentMobile {
+      display: none;
+    }
   }
+  /* UPLOADS */
 }
 /*** fin SECTION 3 "SKILLS" ***/
 
@@ -792,12 +788,13 @@
     border-radius: 16px;
 
     &__img {
-        width: 30vw;
+      width: 30vw;
+    }
 
-        img {
-          width: 80%;
-        }
-      }
+    &__img > img {
+      width: 100%;
+    }
+
     &__content {
       display: flex;
       flex-direction: column;
@@ -920,8 +917,10 @@
         margin-bottom: 32px;
       }
 
+      }
       button {
         border: #f6faff solid 2px;
+        box-shadow: 0px 0px 8px 0px #f6faff;
         border-radius: 8px;
         padding: 8px 32px;
         background-color: transparent;
@@ -929,14 +928,26 @@
         font-size: 24px;
         cursor: pointer;
         margin-top: auto;
+        animation: pulse 3s infinite;
       }
-      button::before {
-        content: ">>";
-        background-color: #f6faff;
-        height: 240px;
-        width: 240px;
-        animation: all ease-out 0.6s;
+      button:hover {
+        // background: radial-gradient(circle, rgba(0,149,255,1) 50%, rgba(144,193,252,1) 80%, rgba(150,211,255,1) 100%);
+        box-shadow: 0px 0px 4px 1px #f6faff, 0px 0px 8px 4px rgba(185, 216, 255, 0.8),
+          0px 0px 12px 8px rgba(144, 193, 252, 0.6),
+          0px 0px 16px 12px rgba(17, 125, 255, 0.4),
+          0px 0px 20px 16px rgba(17, 125, 255, 0.21);
+          animation: none;
       }
+            @keyframes pulse {
+        0% {
+          box-shadow: 0px 0px 0px #f6faff;
+        }
+        50% {
+          box-shadow: 0px 0px 8px 0px #f6faff;
+        }
+        100% {
+          box-shadow: 0px 0px 0px #f6faff;
+        }
     }
   }
 }
@@ -1037,13 +1048,13 @@
         }
 
         a:hover::after {
-          left: 0;
+          left: 0px;
           right: auto;
-          width: 100%;
+          width: 101%;
         }
 
         a:active {
-          transform: translateY(10px);
+          transform: translateY(4px);
         }
 
         img {
@@ -1072,6 +1083,15 @@
     &__header {
       width: 80%;
     }
+    &__socialNetworks {
+      display: flex;
+      justify-content: space-evenly;
+
+      img {
+        height: 44px;
+        width: 44px;
+      }
+    }
   }
   .about,
   .skills,
@@ -1082,8 +1102,31 @@
   }
 
   .about {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    &__header,
     &__text {
-      gap: 24px;
+      width: 100%;
+      margin-bottom: 24px;
+    }
+
+    &__text {
+      align-items: flex-start;
+
+      .headerThree {
+        margin: 0 24px;
+      }
+    }
+
+    &__portrait {
+      order: -1;
+    }
+
+    &__portrait > img {
+      width: 300px;
+      height: 300px;
     }
   }
 
@@ -1095,7 +1138,7 @@
     &__ability {
       display: flex;
       width: 100%;
-      height: 70vh;
+      height: 50vh;
       margin-bottom: 24px;
     }
   }
@@ -1108,11 +1151,14 @@
     &__DP,
     &__outdoor {
       padding: 24px;
-      
-        &__content {
-          gap: 24px;
-          margin: 0 24px;
-        }
+
+      &__content {
+        gap: 24px;
+        margin: 0 24px;
+      }
+      &__content > a {
+        margin: auto;
+      }
     }
   }
 
@@ -1142,17 +1188,19 @@
     }
   }
   .contact {
+    background-size: 50%;
+    margin: 24px 0;
 
     &__container {
       display: flex;
       flex-direction: column;
-      
+
       &__text {
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
 
-        &__seek{
+        &__seek {
           display: flex;
           flex-direction: row;
 
@@ -1165,12 +1213,135 @@
         &__btn {
           height: 100px;
         }
-    }
+      }
     }
   }
 }
 
+@media (max-width: 650px) {
+  .skills {
+    &__content {
+      &__ability {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        gap: 16px;
 
-@media (max-width: 400px) {
+        &__container {
+          width: 100%;
+          min-height: 40vh;
+        }
+      }
+    }
+    &__uploads {
+      width: 100%;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 0;
+      background-color: #b9d8ff;
+      border-radius: 8px;
+
+      .headerThree {
+        font-size: 24px;
+      }
+
+      &__content {
+        display: none;
+      }
+
+      &__contentMobile {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        button {
+          background-color: #003f8b;
+          border-radius: 8px;
+          border: none;
+          color: #f6faff;
+          text-decoration: none;
+        }
+
+        button:hover {
+          background-color: #0095ff;
+        }
+      }
+    }
+  }
+
+  //     &__uploads {
+  //     display: flex;
+  //     flex-direction: column;
+  //     justify-content: space-evenly;
+  //     align-items: center;
+  //     margin: inherit;
+  //     width: 100%;
+
+  //     h3 {
+  //       width: 30%;
+  //     }
+  //     &__content {
+  //       display: flex;
+  //       flex-direction: column;
+  //       justify-content: space-evenly;
+  //       width: 70%;
+  //     }
+  //     &__content > button:nth-child(1)::before {
+  //       content: "pour écran";
+  //       position: relative;
+  //       top: 0;
+  //       left: 25%;
+  //     }
+  //         &__content > button:nth-child(3)::before {
+  //       content: "imprimable"
+  //     }
+  //     &__content button::before {
+  //       color: #003f8b;
+  //        font-size: 24px;
+  //       font-family: "Roboto", sans-serif;
+  //     }
+
+  //     h3,
+  //     p {
+  //       font-size: 24px;
+  //       font-family: "Roboto", sans-serif;
+  //       color: #003f8b;
+  //     }
+
+  //     hr {
+  //       display: none;
+  //     }
+
+  //         button {
+  //       font-size: 24px;
+  //       font-family: "Roboto", sans-serif;
+  //       color: none;
+  //       border: none;
+  //       padding: 8px 32px;
+
+  //     }
+  //   }
+  // }
+
+  .contact {
+    margin: 16px 0;
+
+    &__container {
+      &__text {
+        width: 100%;
+
+        &__seek {
+          flex-direction: column;
+          align-items: flex-start;
+          margin-left: 33%;
+        }
+      }
+      &__content {
+        order: 1;
+      }
+    }
+  }
 }
 </style>
